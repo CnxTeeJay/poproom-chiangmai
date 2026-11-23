@@ -42,7 +42,7 @@
 
 1. เว็บไซต์นี้ถูกตั้งค่า URL สำหรับ GitHub Pages เป็น **`https://cnxteejay.github.io/poproom-chiangmai/`** ไว้เรียบร้อยแล้วใน `index.html`, `robots.txt`, `sitemap.xml` และ `site-config.js` (หากเปลี่ยนโดเมนหรือใช้ลิงก์อื่น สามารถแก้ URL ดังกล่าวให้ตรงกันได้)
 2. บน GitHub Repository `CnxTeeJay/poproom-chiangmai` ให้เปิด **Settings > Pages > Build and deployment** แล้วเลือก Source: **Deploy from a branch**, Branch: **`main`** / **`/ (root)`** กด **Save**
-3. ค้นหาชื่อร้าน **"POP ROOM - Nail, Eyelashes, Hair Salon"** บน Google (ต้องล็อกอินด้วยบัญชี Google ที่ดูแลร้าน) หรือเปิด [Google Business Profile Manager](https://business.google.com/)
+3. ค้นหาชื่อร้าน **"POP ROOM Studio"** บน Google (ต้องล็อกอินด้วยบัญชี Google ที่ดูแลร้าน) หรือเปิด [Google Business Profile Manager](https://business.google.com/)
 4. กดปุ่ม **Edit profile (แก้ไขโปรไฟล์)** > แท็บ **Contact (ข้อมูลติดต่อ)** > ช่อง **Website (เว็บไซต์)**
 5. วาง URL **`https://cnxteejay.github.io/poproom-chiangmai/`** แล้วกด **Save (บันทึก)**
 6. **ทิป SEO เพิ่มเติม:**

@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * POP ROOM - Nail, Eyelashes, Hair Salon | SITE CONFIGURATION
+ * POP ROOM Studio — Nail Salon | SITE CONFIGURATION
  * ============================================================================
  * ข้อมูลจริงของร้านที่ยืนยันแล้ว (Confirmed Owner Data)
  * ช่องทางติดต่ออย่างเป็นทางการ: Phone, Facebook Page / Messenger, Instagram, Lemon8
@@ -16,7 +16,6 @@ window.POPROOM_CONFIG = {
   instagramHandle: "@pop_room219",
   instagramUrl: "https://www.instagram.com/pop_room219/",
   lemon8Label: "POP ROOM Studio",
-  // หมายเหตุ: หากมีลิงก์โปรไฟล์ Lemon8 เฉพาะของร้านในอนาคต สามารถเปลี่ยน URL ด้านล่างได้
   lemon8Url: "https://www.lemon8-app.com/discover/pop%20room%20studio%20chiang%20mai",
   googleMapsUrl: "https://maps.app.goo.gl/mrtoSmJYkp8KDuG86",
   googleReviewUrl: "https://g.page/r/CYNl-KMQV7G4EAE/review",
@@ -29,7 +28,7 @@ window.POPROOM_CONFIG = {
   parkingNoteEn: "Free car parking in front of the salon for 3–5 cars",
   parkingNoteTh: "จอดรถยนต์หน้าร้านได้ฟรี 3–5 คัน",
 
-  // 3. ราคาบริการ (Confirmed Starting Price + DM for Quote)
+  // 3. ราคาบริการทำเล็บ (Confirmed Starting Price + DM for Quote)
   pricesEn: {
     gelManicure: "Starting 250 THB",
     gelPedicure: "DM for quote",
@@ -38,13 +37,7 @@ window.POPROOM_CONFIG = {
     catEyeChromeFrench: "DM for quote",
     dualFormExtension: "DM for quote",
     pvcExtension: "DM for quote",
-    gelRemoval: "DM for quote",
-    lashClassic: "DM for quote",
-    lashVolume: "DM for quote",
-    lashAnimeWispy: "DM for quote",
-    hairCutStyle: "DM for quote",
-    hairTreatment: "DM for quote",
-    hairColorPerm: "DM for quote"
+    gelRemoval: "DM for quote"
   },
   pricesTh: {
     gelManicure: "เริ่มต้น 250 บาท",
@@ -54,16 +47,9 @@ window.POPROOM_CONFIG = {
     catEyeChromeFrench: "ส่งรูปเรฟประเมินราคาฟรี",
     dualFormExtension: "ส่งรูปเรฟประเมินราคาฟรี",
     pvcExtension: "ส่งรูปเรฟประเมินราคาฟรี",
-    gelRemoval: "ส่งรูปเรฟประเมินราคาฟรี",
-    lashClassic: "ส่งรูปเรฟประเมินราคาฟรี",
-    lashVolume: "ส่งรูปเรฟประเมินราคาฟรี",
-    lashAnimeWispy: "ส่งรูปเรฟประเมินราคาฟรี",
-    hairCutStyle: "สอบถามราคาทางแชท",
-    hairTreatment: "สอบถามราคาทางแชท",
-    hairColorPerm: "สอบถามราคาทางแชท"
+    gelRemoval: "ส่งรูปเรฟประเมินราคาฟรี"
   },
 
   // 4. รูปภาพแกลเลอรี (Real Portfolio Photos are wired directly in index.html #gallery-grid)
-  // สามารถเพิ่มรายการใหม่ใน array นี้เพื่อ override หรือเพิ่มเติมได้ในอนาคต
   gallery: []
 };

@@ -1,4 +1,4 @@
-/* POP ROOM - Nail, Eyelashes, Hair Salon | Nude & Blush Studio Theme */
+/* POP ROOM Studio — Nail Salon | Nude & Blush Studio Theme */
 :root {
   --bg-cream: #faf6f2;
   --bg-blush: #f4e8e3;
@@ -13,8 +13,8 @@
   --shadow-soft: 0 10px 30px rgba(68, 44, 38, 0.06);
   --radius-md: 16px;
   --radius-lg: 24px;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Prompt", "Noto Sans Thai", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: var(--font-sans);
   --container-max: 1120px;
 }
 
