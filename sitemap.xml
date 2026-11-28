@@ -3,10 +3,20 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cnxteejay.github.io/poproom-chiangmai/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cnxteejay.github.io/poproom-chiangmai/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="th" href="https://cnxteejay.github.io/poproom-chiangmai/?lang=th" />
+    <lastmod>2026-11-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cnxteejay.github.io/poproom-chiangmai/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://cnxteejay.github.io/poproom-chiangmai/th/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cnxteejay.github.io/poproom-chiangmai/" />
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://cnxteejay.github.io/poproom-chiangmai/th/</loc>
+    <lastmod>2026-11-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cnxteejay.github.io/poproom-chiangmai/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://cnxteejay.github.io/poproom-chiangmai/th/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cnxteejay.github.io/poproom-chiangmai/" />
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 </urlset>

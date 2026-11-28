@@ -121,12 +121,15 @@ html[lang="th"] [data-lang="en"] {
 }
 
 .lang-btn {
+  display: inline-flex;
+  align-items: center;
   border: 0;
   background: transparent;
   color: var(--text-muted);
   font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 500;
+  line-height: 1.2;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
   cursor: pointer;
@@ -530,6 +533,7 @@ html[lang="th"] [data-lang="en"] {
 
 .gallery-item img {
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   background: var(--bg-blush);

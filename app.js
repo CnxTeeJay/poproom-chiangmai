@@ -25,38 +25,27 @@
       }
     });
 
-    if (Array.isArray(cfg.gallery)) {
-      var figures = document.querySelectorAll("[data-gallery-index]");
-      figures.forEach(function (fig) {
-        var idx = parseInt(fig.getAttribute("data-gallery-index"), 10);
-        var item = cfg.gallery[idx];
-        if (!item) return;
-        var img = fig.querySelector("img");
-        var capEn = fig.querySelector('[data-lang="en"]');
-        var capTh = fig.querySelector('[data-lang="th"]');
-        if (img && item.src) {
-          img.setAttribute("src", item.src);
-          img.setAttribute("alt", item.altEn || "POP ROOM Chiang Mai");
-        }
-        if (capEn && item.captionEn) capEn.textContent = item.captionEn;
-        if (capTh && item.captionTh) capTh.textContent = item.captionTh;
-      });
-    }
-
-    // Update JSON-LD dynamically if websiteUrl is configured after deploy
+    // Update JSON-LD NailSalon node if websiteUrl / social links are configured
     var ldEl = document.getElementById("salon-jsonld");
     if (ldEl) {
       try {
-        var ld = JSON.parse(ldEl.textContent);
-        if (cfg.phoneHref) ld.telephone = "+66629832615";
-        if (cfg.websiteUrl && cfg.websiteUrl.indexOf("{") === -1) ld.url = cfg.websiteUrl;
-        if (cfg.openingHoursSchema) ld.openingHours = cfg.openingHoursSchema;
-        if (cfg.googleMapsUrl) ld.hasMap = cfg.googleMapsUrl;
-        var sameAs = [cfg.facebookUrl, cfg.instagramUrl].filter(function (u) {
-          return u && u.indexOf("{") === -1;
-        });
-        if (sameAs.length) ld.sameAs = sameAs;
-        ldEl.textContent = JSON.stringify(ld, null, 2);
+        var parsed = JSON.parse(ldEl.textContent);
+        var target = parsed;
+        if (Array.isArray(parsed["@graph"])) {
+          target = parsed["@graph"].find(function (node) {
+            return node && node["@type"] === "NailSalon";
+          }) || parsed["@graph"][0];
+        }
+        if (target) {
+          if (cfg.phoneHref) target.telephone = "+66629832615";
+          if (cfg.openingHoursSchema) target.openingHours = cfg.openingHoursSchema;
+          if (cfg.googleMapsUrl) target.hasMap = cfg.googleMapsUrl;
+          var sameAs = [cfg.facebookUrl, cfg.instagramUrl, cfg.lemon8Url, cfg.googleMapsUrl].filter(function (u) {
+            return u && u.indexOf("{") === -1;
+          });
+          if (sameAs.length) target.sameAs = sameAs;
+        }
+        ldEl.textContent = JSON.stringify(parsed, null, 2);
       } catch (err) {
         // Keep static JSON-LD intact if parsing fails
       }
@@ -64,6 +53,8 @@
   }
 
   function detectInitialLang() {
+    var fixed = document.documentElement.getAttribute("data-fixed-lang");
+    if (fixed === "th" || fixed === "en") return fixed;
     var params = new URLSearchParams(window.location.search);
     var urlLang = params.get("lang");
     if (urlLang === "th" || urlLang === "en") return urlLang;
@@ -78,19 +69,31 @@
   function setLang(lang) {
     var safeLang = lang === "th" ? "th" : "en";
     document.documentElement.setAttribute("lang", safeLang);
-    document.querySelectorAll(".lang-btn").forEach(function (btn) {
+    document.querySelectorAll(".lang-btn[data-set-lang]").forEach(function (btn) {
       var active = btn.getAttribute("data-set-lang") === safeLang;
       btn.classList.toggle("active", active);
       btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
+
+    if (!document.documentElement.hasAttribute("data-fixed-lang")) {
+      if (safeLang === "th") {
+        document.title = "POP ROOM Studio — ร้านทำเล็บเจล สปามือเท้า สันทราย เชียงใหม่ | ใกล้เซ็นทรัลเฟสติวัล รวมโชค ม.พายัพ";
+      } else {
+        document.title = "POP ROOM Studio — ร้านทำเล็บเจล สปา สันทราย เชียงใหม่ | Nail Salon Near Central Festival & Payap";
+      }
+    }
+
     try {
       localStorage.setItem("poproom_lang", safeLang);
     } catch (e) {}
   }
 
   function initLangToggle() {
+    if (document.documentElement.hasAttribute("data-fixed-lang")) {
+      return;
+    }
     setLang(detectInitialLang());
-    document.querySelectorAll(".lang-btn").forEach(function (btn) {
+    document.querySelectorAll("button.lang-btn[data-set-lang]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         setLang(btn.getAttribute("data-set-lang"));
       });
